@@ -1,0 +1,26 @@
+$Id: History
+----------------------------------------------------
+
+     =========================================================
+     Geant4 - an Object-Oriented Toolkit for Simulation in HEP
+     =========================================================
+
+                    ElecBackScat History file
+                    ---------------------
+This file should be used by the G4 example coordinator to briefly
+summarize all major modifications introduced in the code and keep
+track of all tags.
+
+     ----------------------------------------------------------
+     * Reverse chronological order (last date on top), please *
+     ----------------------------------------------------------
+17-11-21 S.Guatelli (ebackscat-V10-07-00)
+- migration to G4AnalysisManager.hh
+
+03-11-17 A.Bagulya (ebackscat-V10-03-01)
+- for 10.4
+
+13-04-17 A.Bagulya (ebackscat-V10-03-00)
+- copy of ElecBackScatSand_ascii prepared for CVMFS; 
+- enable cmake to run the test; 1st tag
+     

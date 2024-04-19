@@ -1,0 +1,83 @@
+############################################################
+#
+# Geant4 test for electron energy and charge backscatter
+#
+# paolo.dondero@cern.ch, Anton.Lechner@cern.ch
+#
+############################################################
+
+
+
+Geant4 test concerning the fraction of electron energy and charge
+backscattered from cylindric targets. The applications allows to test 
+against expected values (i.e. from experiments).
+
+
+1) Target: Cylinder in vacuum
+
+Material and dimension can be set using following commands:
+/detector/material           G4_Al
+/detector/length             0.2 cm
+/detector/radius             2.5 cm
+(arbitrary values shown for illustration, check in Materials.cc for
+a list of implemented materials)
+
+The maximum step size and secondary productionc cut can be set as follows:
+/detector/maxStepSize        1 m
+/detector/prodCut            10 um         
+(arbitrary values shown for illustration)
+
+
+2) Beam: Electron pencil beam hitting target at center of front surface
+
+Energy, relative energy spread and incident angle can be set as follows:
+/beam/energy                 0.109 MeV
+/beam/sigma                  0.05
+/beam/angle                  60.0 deg
+(arbitrary values shown for illustration, angle is the angle between
+surface normal and beam axis)
+
+
+3) Physics: Different physics lists are implemented (see PhysicsList.cc)
+
+Physics list can be set with one of the following commands into the .mac file:
+/testem/phys/addPhysics standardGS
+/testem/phys/addPhysics standardSS
+/testem/phys/addPhysics emstandard_opt0
+/testem/phys/addPhysics emstandard_opt3
+
+Additional options can be set using built-in commands:
+/process/eLoss/StepFunction        0.2  100.0 um
+/process/msc/RangeFactor  0.04
+/process/msc/Skin  3
+(arbitrary values shown for illustration)
+
+4) Compile and launch
+   When compile the suite, a set of folders will be copied into your build directory. 
+   - data (contains the experimental results from various references, used to produce plots)
+   - plot (contains the macros to produce plots)
+   - scripts (contains the scripts to launch the simulation)
+
+   Copy from the scripts folder the three scripts into the build directory. 
+   run_all.sh launch the simulation over all materials, angles, physics lists and energies actually available.
+   The .mac files are taken from the "macro" folder into the main ElecBackScatSand folder (usually ../macro from the build directory). Those are divided by the material into different subfolders. For Al an additional folder is present, for the simulation in the low energy range and higher statistic. In this case the lower cut on the electron energy is set to 50 eV for GS and SS.
+
+5) Output
+
+5a) A summary of results is provided into an ASCII file containing the following information:
+
+*) Material
+*) Beam energy in MeV
+*) Incident angle in degree
+*) Fraction of electron energy reflected 
+*) Absolute error of fraction of electron energy reflected 
+*) Fraction of electrons reflected (number of electrons)
+*) Absolute error of fraction of electrons reflected 
+
+During the simulation a "results" folder is created into the build directory, containing the simulation results. The results are organized into subfolders for different materials. For each material, subfolders are created for different physics lists and incidence angles.
+E.g. ElecBackScatSand/ElecBackScatSand-build/results/G4_Al/00deg_emstandatdGS/ contains the results for Aluminium at 0 degrees incidence and for the GS physics list.
+Various output files are produced. The summary is stored into res_*.dat files (e.g. res_00deg_emstandatdGS.dat).
+
+6) Plotting
+Into the "plot" subdirectory (copied during build) the plot macros are available. A dedicated README can be found inside this folder. 
+

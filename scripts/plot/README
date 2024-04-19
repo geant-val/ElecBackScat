@@ -1,0 +1,29 @@
+**** Plot macro for electron backscattering coefficients ***
+The macro produces backscattering coefficient plots in two energy range and with respect to different experimental datasets.
+The default mode (flag #5 set to 0) shows simulations vs Sandia80 and Neubert data for the various materials and angles between 0.032 and 1.033 MeV. Plot 1 shows SS, GS, Opt0 and Opt3 vs Sandia and Neubert. Plot 2 shows SS vs Sandia (upper part) and SS/Sandia (lower part). 
+Setting flag #5 to 1 the lower energy range is shown. SS and GS are compared with respect to several experimental datasets in the eV - keV energy range. Those simulations are performed with higher statistic.
+The input files are taken from:
+a) ../results/ for simulation results (ASCII format)
+b) ../data/ for experimental data (.tsv format)
+(these paths are by default written into the code, have to recompile if changed)
+
+Output files are saved into ./plot subdirectory into .png format.
+
+
+1) To compile use the makefile (needs root libraries)
+
+2) Executable to run: ./plotpowrat_numfrac
+   Options: 
+   # 1 material (Al, Be, C, Mo, Ta, Ti, U)
+   # 2 angle (0, 15, 30, 45, 60, 75) 
+   # 3 number or energy (n/e)
+   # 4 display Sandia article theoretical points
+   # 5 display C. Joy database  -- (Only for Al at the moment)
+   # 6 Draw canvas on screen?
+
+Example:
+./plotpowrat_numfrac Al 0 n 0 1 1
+
+NOTE: Be has different angles (1, 16, 31, 46, 61, 76), but you have to launch the macro with the usual angles. The scripts -only for Be- increment those values of 1.
+
+

@@ -1,0 +1,80 @@
+
+        ############################################
+        !!! WARNING - FPE detection is activated !!!
+        ############################################
+
+*************************************************************
+ Geant4 version Name: geant4-10-00-ref-03 [MT]   (31-March-2014)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+INFORMATION:  Commands in file test1 used to control simulation.
+/tracking/verbose 0
+/run/verbose 0
+/event/verbose 0
+/testem/phys/addPhysics PHYSLIST
+PhysicsList::AddPhysicsList: <emstandard_opt0>
+/run/initialize
+PhysicsList::SetCuts:CutLength : 1 mm 
+/testem/phys/setCuts CUTS
+/testem/stepMax STEPMAX
+/detector/material G4_Al
+INFORMATION: Setting calorimeter material:  Material:    G4_Al    density:  2.699 g/cm3   RadL:   8.896 cm   Nucl.Int.Length:  38.877 cm 
+                       Imean: 166.000 eV 
+
+   --->  Element: Al (Al)   Z = 13.0   N =  27.0   A =  26.98 g/mole
+         --->  Isotope:  Al27   Z = 13   N =  27   A =  26.98 g/mole   abundance: 100.00 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+/detector/length 0.264 cm
+/detector/radius 2.54 cm
+/beam/angle 0.0 deg
+/beam/energy 1.033 MeV
+/beam/sigma 0.0
+/run/beamOn 50000
+G4RunManagerKernel::BuildPhysicsTables: physicsNeedsToBeReBuilt= 1
+
+========= Table of registered couples ==============================
+
+Index : 0     used in the geometry : Yes
+ Material : VACUUM
+ Range cuts        :  gamma  100 um     e-  100 um     e+  100 um  proton 1 mm 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : G4_Al
+ Range cuts        :  gamma  100 um     e-  100 um     e+  100 um  proton 1 mm 
+ Energy thresholds :  gamma  2.3478 keV    e-  131.031 keV    e+  128.416 keV proton 100 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+====================================================================
+
+INFORMATION: Run No 0 starts.
+INFORMATION: Tracking: 50003/4443 e- created/stopped in world, 14098/59658 e- created/stopped in detector
+INFORMATION: Run No 0 ends (Number of events = 50000).
+/beam/energy 0.521 MeV
+/beam/sigma 0.0
+/run/beamOn 50000
+G4RunManagerKernel::BuildPhysicsTables: physicsNeedsToBeReBuilt= 0
+INFORMATION: Run No 1 starts.
+INFORMATION: Tracking: 50000/5529 e- created/stopped in world, 4031/48502 e- created/stopped in detector
+INFORMATION: Run No 1 ends (Number of events = 50000).
+/beam/energy 0.314 MeV
+/beam/sigma 0.0
+/run/beamOn 50000
+G4RunManagerKernel::BuildPhysicsTables: physicsNeedsToBeReBuilt= 0
+INFORMATION: Run No 2 starts.
+INFORMATION: Tracking: 50000/5829 e- created/stopped in world, 1334/45505 e- created/stopped in detector
+INFORMATION: Run No 2 ends (Number of events = 50000).
+/beam/energy 0.109 MeV
+/beam/sigma 0.0
+/run/beamOn 50000
+G4RunManagerKernel::BuildPhysicsTables: physicsNeedsToBeReBuilt= 0
+INFORMATION: Run No 3 starts.
+INFORMATION: Tracking: 50000/5976 e- created/stopped in world, 366/44390 e- created/stopped in detector
+INFORMATION: Run No 3 ends (Number of events = 50000).

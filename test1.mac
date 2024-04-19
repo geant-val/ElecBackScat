@@ -1,0 +1,77 @@
+#
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 0
+/event/verbose 0
+#
+#
+/testem/phys/addPhysics PHYSLIST
+#
+/run/initialize
+#
+/testem/phys/setCuts CUTS
+/testem/stepMax      STEPMAX
+#
+#/process/msc/RangeFactor  0.01
+#/process/msc/Skin  3
+#
+#
+/detector/material           G4_Al
+/detector/length             0.264 cm
+/detector/radius             2.54 cm
+#
+/beam/angle                  0.0 deg
+#
+#
+# #############################################################
+# ### Run No 1
+# #############################################################
+#
+#################### 
+# BEAM DESCRIPTION #
+####################
+#
+/beam/energy                 1.033 MeV
+/beam/sigma                  0.0
+#
+/run/beamOn 50000
+#
+# #############################################################
+# ### Run No 2
+# #############################################################
+#
+#################### 
+# BEAM DESCRIPTION #
+####################
+#
+/beam/energy                 0.521 MeV
+/beam/sigma                  0.0
+#
+/run/beamOn 50000
+#
+# #############################################################
+# ### Run No 3
+# #############################################################
+#
+#################### 
+# BEAM DESCRIPTION #
+####################
+#
+/beam/energy                 0.314 MeV
+/beam/sigma                  0.0
+#
+/run/beamOn 50000
+#
+# #############################################################
+# ### Run No 4
+# #############################################################
+#
+#################### 
+# BEAM DESCRIPTION #
+####################
+#
+/beam/energy                 0.109 MeV
+/beam/sigma                  0.0
+#
+/run/beamOn 50000
+#

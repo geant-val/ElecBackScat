@@ -1,0 +1,28 @@
+Experimental data
+=================
+
+== Electron energy and number backscatter ==
+
+Reference:
+G J Lockwood and G H Miller and J A Halbleib,
+"Electron Energy and Charge Albedos - Calorimetric Measurement vs Monte Carlo Theory",
+SAND80-1968 UC-34a.
+
+
+
+== File structure ==
+
+*) Directory "chargebsc" contains number backscatter coefficients
+(fraction of electrons backscattered per incident electron).
+
+*) Directory "energybsc" contains energy backscatter coefficients
+(fraction of electron energy backscattered per incident electron energy).
+
+
+
+== Files names and content ==
+
+Named according to absorber material.
+1st column: Beam energy in MeV
+2nd column: Number/energy backscatter coefficient at 0 degree incidence
+3rd column: Number/energy backscatter coefficient at 60 degree incidence
